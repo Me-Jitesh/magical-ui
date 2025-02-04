@@ -1,50 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { Button, TextField, Box } from '@mui/material';
-import { UserData } from '../models/UserData';
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "../store/userSlice";
+import { TextField, Button, Box } from "@mui/material";
 
-const UserDataForm: React.FC = () => {
+const UserDataForm = () => {
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState({
+    id: Date.now().toString(),
+    name: "",
+    address: "",
+    email: "",
+    phone: "",
+  });
 
-    const udata: UserData = {
-        address: "",
-        email: "",
-        phone: ""
-    };
+  useEffect(() => {
+    window.addEventListener("beforeunload", (e) => {
+      if (JSON.stringify(formData) !== JSON.stringify({})) {
+        e.preventDefault();
+        e.returnValue = "You have unsaved changes!";
+      }
+    });
+    return () => window.removeEventListener("beforeunload", () => { });
+  }, [formData]);
 
-    const [formData, setFormData] = useState(udata);
-    const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+  const handleSubmit = () => {
+    dispatch(setUser(formData));
+    localStorage.setItem("user", JSON.stringify(formData));
+    alert("Data Saved!");
+  };
 
-    useEffect(() => {
-        const handleBeforeUnload = (event: BeforeUnloadEvent) => {
-            if (hasUnsavedChanges) {
-                event.returnValue = "Stop! You have unsaved changes";
-            }
-        };
-        window.addEventListener('beforeunload', handleBeforeUnload);
-        return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
-        };
-    }, [hasUnsavedChanges]);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-        setHasUnsavedChanges(true);
-    };
-
-    const handleSubmit = () => {
-        const userId = `user-${Math.random().toString(36).substr(2, 9)}`;
-        localStorage.setItem(userId, JSON.stringify(formData));
-        console.log(localStorage.getItem(userId)) // Debug
-        setHasUnsavedChanges(false);
-    };
-
-    return (
-        <Box sx={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <TextField label="Address" name="address" value={formData.address} onChange={handleChange} />
-            <TextField label="Email" name="email" value={formData.email} onChange={handleChange} />
-            <TextField label="Phone" name="phone" value={formData.phone} onChange={handleChange} />
-            <Button variant="outlined" color="secondary" onClick={handleSubmit} sx={{ marginTop: '1rem' }}>Save</Button>
-        </Box>
-    );
+  return (
+    <Box sx={{ padding: '0rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <TextField label="Name" onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+      <TextField label="Address" onChange={(e) => setFormData({ ...formData, address: e.target.value })} />
+      <TextField label="Email" onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+      <TextField label="Phone" onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+      <Button variant="outlined" color="secondary" onClick={handleSubmit}>Save</Button>
+    </Box>
+  );
 };
 
 export default UserDataForm;

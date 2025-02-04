@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
     return (
         <AppBar position="static" color='transparent'>
             <Toolbar>
-                <Typography variant="h3" color="secondary" sx={{ flexGrow: 1 }}>
+                <Typography variant="h3" color="secondary" >
                     Magical UI
                 </Typography>
 
