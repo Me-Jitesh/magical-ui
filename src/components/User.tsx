@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, TextField, Box } from '@mui/material';
 import { UserData } from '../models/UserData';
 
-const UserDataForm: React.FC = () => {
+const User: React.FC = () => {
 
     const udata: UserData = {
         address: "",
@@ -10,7 +10,7 @@ const UserDataForm: React.FC = () => {
         phone: ""
     };
 
-    const [formData, setFormData] = useState(udata);
+    const [formData, setFormData] = useState({ name: '', id: '', userdata: udata });
     const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
     useEffect(() => {
@@ -39,12 +39,12 @@ const UserDataForm: React.FC = () => {
 
     return (
         <Box sx={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <TextField label="Address" name="address" value={formData.address} onChange={handleChange} />
-            <TextField label="Email" name="email" value={formData.email} onChange={handleChange} />
-            <TextField label="Phone" name="phone" value={formData.phone} onChange={handleChange} />
+            <TextField label="Name" name="name" value={formData.name} onChange={handleChange} />
+            <TextField label="ID" name="id" value={formData.id} onChange={handleChange} />
+            <TextField label="User Data" name="udata" value={formData.userdata} onChange={handleChange} />
             <Button variant="outlined" color="secondary" onClick={handleSubmit} sx={{ marginTop: '1rem' }}>Save</Button>
         </Box>
     );
 };
 
-export default UserDataForm;
+export default User;

@@ -10,7 +10,7 @@ const RichTextEditor: React.FC = () => {
     };
 
     return (
-        <div style={{ padding: '5rem' }}>
+        <div style={{ padding: '2rem', minHeight: '50px' }}>
             <ReactQuill value={editorContent} onChange={handleEditorChange} />
         </div>
     );
