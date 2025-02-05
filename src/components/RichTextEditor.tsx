@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // Import styles for the editor
+import 'react-quill/dist/quill.snow.css';
 
 const RichTextEditor: React.FC = () => {
   const [editorValue, setEditorValue] = useState<string>('');
 
   const handleChange = (value: string) => {
-    setEditorValue(value); // Update the value of the editor
+    setEditorValue(value);
   };
 
   return (
@@ -15,7 +15,7 @@ const RichTextEditor: React.FC = () => {
       <ReactQuill
         value={editorValue}
         onChange={handleChange}
-        theme="snow" // Use the "snow" theme for the editor
+        theme="snow"
       />
       <div>
         <h3>Editor Output</h3>

@@ -5,15 +5,10 @@ import RichTextEditor from './RichTextEditor';
 import UserDataForm from './UserDataForm';
 import Profile from './Profile';
 import Anime from './Anime';
-import Navbar from './Navbar';
 export const Dashboard: React.FC = () => {
 
   return (
     <>
-      {/* <Box sx={{ padding: 0 }}> */}
-        <Navbar />
-      {/* </Box> */}
-
       <Box sx={{ flexGrow: 1, padding: 1 }}>
 
         <Grid container spacing={5}>
