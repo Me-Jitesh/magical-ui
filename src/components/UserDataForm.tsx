@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
-import { TextField, Button, Box, Paper, Typography } from "@mui/material";
+import { TextField, Button, Box, Paper } from "@mui/material";
 import Swal from "sweetalert2";
 
 const UserDataForm = () => {
