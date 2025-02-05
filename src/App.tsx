@@ -13,17 +13,17 @@ const App = () => {
       primary: purple,
       secondary: grey,
       background: {
-        default: grey[900],
-        paper: grey[800],
+        default:'#27293d',
+        paper: '#27293f',
       },
     },
     typography: {
       h1: {
-        color: purple[100],  // Lighter color for headings in dark mode
+        color: purple[100],
         fontWeight: 700,
       },
       h2: {
-        color: purple[200],  // Lighter color for subheadings
+        color: purple[200],
         fontWeight: 600,
       },
       h3: {
