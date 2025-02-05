@@ -8,11 +8,11 @@ const Counter = () => {
   const dispatch = useDispatch();
 
   return (
-    <Box sx={{ mx: 10 }}>
-      <h2>Counter: {count}</h2>
-      <Button onClick={() => dispatch(increment())}>+</Button>
-      <Button onClick={() => dispatch(decrement())}>-</Button>
-      <Button onClick={() => dispatch(reset())}>Reset</Button>
+    <Box sx={{ mx: 5 }}>
+      <h2>{count}</h2>
+      <Button color='info' variant="contained" onClick={() => dispatch(increment())}>+</Button>
+      <Button color='secondary' variant="contained" sx={{ mx: 1 }} onClick={() => dispatch(decrement())}>-</Button>
+      <Button color='primary' variant="outlined" onClick={() => dispatch(reset())}>Reset</Button>
     </Box>
   );
 };

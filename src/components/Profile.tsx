@@ -6,13 +6,17 @@ const Profile = () => {
   const user = useSelector((state: RootState) => state.user);
 
   return (
-    <Paper elevation={0} sx={{ padding: 2, maxWidth: 600, mx: "auto", mt: 6 }}>
+    <Paper elevation={0} sx={{ maxWidth: 600, mx: "auto", mt: 3 }}>
       <Box>
-        <Typography variant="h6">User ID: {user.id}</Typography>
-        <Typography variant="h6">Name: {user.name}</Typography>
-        <Typography variant="h6">Address: {user.address}</Typography>
-        <Typography variant="h6">Email: {user.email}</Typography>
-        <Typography variant="h6">Phone: {user.phone}</Typography>
+        <Typography variant="h5">User ID : {user.id}</Typography>
+        <hr />
+        <Typography variant="h5">Name : {user.name}</Typography>
+        <hr />
+        <Typography variant="h5">Address : {user.address}</Typography>
+        <hr />
+        <Typography variant="h5">Email : {user.email}</Typography>
+        <hr />
+        <Typography variant="h5">Phone : {user.phone}</Typography>
       </Box>
     </Paper>
   );

@@ -17,7 +17,7 @@ const Navbar: React.FC<{ toggleTheme: () => void; darkMode: boolean }> = ({
     <AppBar position="static" color="transparent">
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
 
-        <Typography variant="h6" color="primary" sx={{ flex: 1, py: 2, fontWeight: 700 }}>
+        <Typography variant="h6" sx={{ flex: 1, py: 2, fontWeight: 800 }}>
           Magical UI ✨
         </Typography>
 
@@ -32,19 +32,21 @@ const Navbar: React.FC<{ toggleTheme: () => void; darkMode: boolean }> = ({
         </IconButton>
 
         {/* IPGeoLocation Component for Larger Screens */}
-        <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}>
+        <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center", color: "slategray" }}>
           <IPGeoLocation />
         </Box>
 
         {/* Dark Mode Toggle */}
         <Box sx={{ display: "flex", alignItems: "center", padding: 2 }}>
-          <IconButton onClick={toggleTheme} color="primary">
+          <IconButton onClick={toggleTheme} color="secondary">
             {darkMode ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
         </Box>
 
         {/* AskAI Component */}
-        <AskAI />
+        <Box>
+          <AskAI />
+        </Box>
       </Toolbar>
 
       {/* Drawer for Mobile Navigation */}

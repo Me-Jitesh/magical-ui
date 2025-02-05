@@ -36,24 +36,23 @@ const App = () => {
   const lightTheme = createTheme({
     palette: {
       mode: 'light',
-      primary: purple,
-      secondary: grey,
+      primary: { main: '#8d99ae' },
+      secondary: { main: '#fee715' },
+      info: { main: '#4cdef5' },
+
       background: {
-        default: grey[100],
-        paper: grey[200],
+        default: '#3f3250',
+        paper: '#edf2fa',
       },
     },
     typography: {
-      h1: {
-        color: purple[900], // Darker color for headings in light mode
-        fontWeight: 700,
+      fontFamily: "Quicksand, sans-serif",
+      h5: {
+        color: '#3f3250',
+        fontWeight: 500,
       },
-      h2: {
-        color: purple[800], // Darker color for subheadings
-        fontWeight: 600,
-      },
-      h3: {
-        color: purple[700],
+      h6: {
+        color: '#ffffff',
         fontWeight: 500,
       },
     },

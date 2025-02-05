@@ -99,8 +99,8 @@ const UserDataForm = () => {
 
         <Button
           variant="contained"
-          color="primary"
-          sx={{ mt: 2, py: 1.5, fontSize: "1rem" }}
+          color="info"
+          sx={{ mt: 2, py: 1.5, fontSize: "1rem", borderRadius: "50px" }}
           onClick={handleSubmit}
         >
           Save

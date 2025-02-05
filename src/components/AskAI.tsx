@@ -21,7 +21,7 @@ const AskAI: React.FC = () => {
     };
 
     return (
-        <IconButton color="info" onClick={askQuestion}>
+        <IconButton color="primary" size="large" onClick={askQuestion}>
             <SupportAgent />
         </IconButton>
     );
