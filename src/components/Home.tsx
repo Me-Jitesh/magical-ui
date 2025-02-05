@@ -11,39 +11,39 @@ export const Dashboard: React.FC = () => {
     <>
       <Box sx={{ flexGrow: 1, padding: 1 }}>
 
-        <Grid container spacing={5}>
+        <Grid container spacing={2}>
 
           <Grid item xs={12} sm={12} md={12}>
             <Paper sx={{ padding: 1, height: '100%' }}>
-              <h1>FLUID ANIMATION</h1>
+              <h3>FLUID ANIMATION</h3>
               <Anime />
             </Paper>
           </Grid>
 
           <Grid item xs={12} sm={6} md={6}>
             <Paper sx={{ padding: 1, height: '100%' }}>
-              <h1>COUNTER </h1>
+              <h3>COUNTER </h3>
               <Counter />
             </Paper>
           </Grid>
 
           <Grid item xs={12} sm={6} md={6}>
             <Paper sx={{ padding: 1, height: '100%' }}>
-              <h1>RICH TEXT EDITOR</h1>
+              <h3>RICH TEXT EDITOR</h3>
               <RichTextEditor />
             </Paper>
           </Grid>
 
           <Grid item xs={12} sm={6} md={6}>
             <Paper sx={{ padding: 1, height: '100%' }}>
-              <h1>USER DATA FORM </h1>
+              <h3>USER DATA FORM </h3>
               <UserDataForm />
             </Paper>
           </Grid>
 
           <Grid item xs={12} sm={6} md={6}>
             <Paper sx={{ padding: 1, height: '100%' }}>
-              <h1>USER DATA</h1>
+              <h3>USER DATA</h3>
               <Profile />
             </Paper>
           </Grid>
