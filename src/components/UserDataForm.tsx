@@ -57,10 +57,6 @@ const UserDataForm = () => {
 
   return (
     <Paper elevation={3} sx={{ padding: 3, maxWidth: 500, mx: "auto", mt: 3 }}>
-      <Typography variant="h4" align="center" color="primary" gutterBottom>
-        User Data Form
-      </Typography>
-
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <TextField
           label="Name"
