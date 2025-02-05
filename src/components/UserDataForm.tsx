@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
-import { TextField, Button, Box } from "@mui/material";
+import { TextField, Button, Box, Paper } from "@mui/material";
 
 const UserDataForm = () => {
   const dispatch = useDispatch();
@@ -30,13 +30,46 @@ const UserDataForm = () => {
   };
 
   return (
-    <Box sx={{ padding: '0rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <TextField label="Name" onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-      <TextField label="Address" onChange={(e) => setFormData({ ...formData, address: e.target.value })} />
-      <TextField label="Email" onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
-      <TextField label="Phone" onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
-      <Button variant="outlined" color="secondary" onClick={handleSubmit}>Save</Button>
-    </Box>
+    <Paper elevation={0} sx={{ padding: 2, maxWidth: 500, mx: "auto", mt: 3 }}>
+
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+        <TextField
+          label="Name"
+          fullWidth
+          variant="outlined"
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        />
+        <TextField
+          label="Address"
+          fullWidth
+          variant="outlined"
+          onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+        />
+        <TextField
+          label="Email"
+          fullWidth
+          variant="outlined"
+          type="email"
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+        <TextField
+          label="Phone"
+          fullWidth
+          variant="outlined"
+          type="tel"
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+        />
+
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ mt: 2, py: 1.5, fontSize: "1rem" }}
+          onClick={handleSubmit}
+        >
+          Save
+        </Button>
+      </Box>
+    </Paper>
   );
 };
 

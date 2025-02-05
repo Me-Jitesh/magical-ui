@@ -8,7 +8,7 @@ const Counter = () => {
   const dispatch = useDispatch();
 
   return (
-    <Box>
+    <Box sx={{ mx: 10 }}>
       <h2>Counter: {count}</h2>
       <Button onClick={() => dispatch(increment())}>+</Button>
       <Button onClick={() => dispatch(decrement())}>-</Button>
