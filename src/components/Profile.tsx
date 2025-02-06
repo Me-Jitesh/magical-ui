@@ -6,7 +6,7 @@ const Profile = () => {
   const user = useSelector((state: RootState) => state.user);
 
   return (
-    <Paper elevation={0} sx={{ maxWidth: 600, mx: "auto", mt: 3, p: 5 }}>
+    <Paper elevation={0} sx={{ maxWidth: 600, mx: "auto", mt: 3, p: 5, py: 11 }}>
       <Box>
         <Typography variant="h5">User ID : {user.id}</Typography>
         <hr />

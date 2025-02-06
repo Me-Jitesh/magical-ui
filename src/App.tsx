@@ -4,7 +4,7 @@ import AppRoutes from './routes';
 import Navbar from './components/Navbar';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
 
   const darkTheme = createTheme({
     palette: {
@@ -24,9 +24,9 @@ const App = () => {
         fontWeight: 200,
       },
       h6: {
-        fontFamily: '',
+        fontFamily: 'Potra',
         color: '#a594f9',
-        fontWeight: 500,
+        fontWeight: 200,
       },
     },
   });
@@ -50,8 +50,9 @@ const App = () => {
         fontWeight: 900,
       },
       h6: {
+        fontFamily: 'Quantum Lemon Bold',
         color: '#ffffff',
-        fontWeight: 900,
+        fontWeight: 200,
       },
     },
   });
