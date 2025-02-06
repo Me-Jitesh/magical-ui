@@ -14,7 +14,7 @@ export const Dashboard: React.FC = () => {
         <Grid container spacing={2}>
 
           <Grid item xs={12} sm={12} md={12}>
-            <Paper sx={{ padding: 1, height: '100%' }}>
+            <Paper sx={{ padding: 1, height: '100%' }} >
               <h3>FLUID ANIMATION</h3>
               <Anime />
             </Paper>

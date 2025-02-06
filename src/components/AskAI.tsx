@@ -7,7 +7,7 @@ const AskAI: React.FC = () => {
     // Ask AI Function
     const askQuestion = async () => {
         const { value: question } = await Swal.fire({
-            title: "SEEK AI",
+            title: "Ask AI",
             input: "text",
             inputPlaceholder: "Type your question...",
             showCancelButton: true,

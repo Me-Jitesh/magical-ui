@@ -31,40 +31,35 @@ const Navbar: React.FC<{ toggleTheme: () => void; darkMode: boolean }> = ({
           <MenuIcon />
         </IconButton>
 
-        {/* IPGeoLocation Component for Larger Screens */}
-        <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center", color: "slategray" }}>
+        <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}>
           <IPGeoLocation />
         </Box>
 
-        {/* Dark Mode Toggle */}
+
         <Box sx={{ display: "flex", alignItems: "center", padding: 2 }}>
           <IconButton onClick={toggleTheme} color="secondary">
             {darkMode ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
         </Box>
 
-        {/* AskAI Component */}
         <Box>
           <AskAI />
         </Box>
       </Toolbar>
 
-      {/* Drawer for Mobile Navigation */}
       <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}>
-        <Box sx={{ width: 250 }}>
-          {/* Close Drawer Button */}
-          <IconButton onClick={() => setOpenDrawer(false)} sx={{ position: "absolute", top: 10, right: 10 }}>
-            <CloseIcon />
-          </IconButton>
+        <Box sx={{ width: 200 }}>
+
           <List>
-            <ListItem onClick={() => setOpenDrawer(false)} component="li">
-              <ListItemText primary="Close" />
-            </ListItem>
-            <ListItem onClick={toggleTheme} component="li">
-              <ListItemText primary={darkMode ? "Light Mode" : "Dark Mode"} />
-            </ListItem>
             <ListItem>
               <IPGeoLocation />
+            </ListItem>
+            <ListItem onClick={toggleTheme} component="li">
+              <ListItemText primary={darkMode ? "Dark" : "Light"} />
+              {darkMode ? < DarkModeIcon /> : <LightModeIcon />}
+            </ListItem>
+            <ListItem onClick={() => setOpenDrawer(false)} component="li">
+              <ListItemText primary="Close" /> <CloseIcon />
             </ListItem>
           </List>
         </Box>

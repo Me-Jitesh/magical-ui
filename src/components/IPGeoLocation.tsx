@@ -24,8 +24,8 @@ const IPGeoLocation: React.FC = () => {
 
     return (
         <Box sx={{ textAlign: "right" }}>
-            <Typography variant="body1">IP : {ip || "Loading..."}</Typography>
-            <Typography variant="body2">📍 {location || "Fetching..."}</Typography>
+            <Typography variant="body1" color="primary" fontWeight={'bolder'}>IP : {ip || "Loading..."}</Typography>
+            <Typography variant="body2" color="warning" fontWeight={'bold'}>📍 {location || "Fetching..."}</Typography>
         </Box>
     );
 };

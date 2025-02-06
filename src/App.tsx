@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import { purple, grey } from '@mui/material/colors';
 import AppRoutes from './routes';
 import Navbar from './components/Navbar';
 
@@ -10,24 +9,23 @@ const App = () => {
   const darkTheme = createTheme({
     palette: {
       mode: 'dark',
-      primary: purple,
-      secondary: grey,
+      primary: { main: '#a594f9' },
+      secondary: { main: '#8d99ae' },
+      info: { main: '#4cdef5' },
       background: {
-        default:'#27293d',
-        paper: '#27293f',
+        default: '#0e0b16',
+        paper: '#0d0c1d',
       },
     },
     typography: {
-      h1: {
-        color: purple[100],
-        fontWeight: 700,
+      fontFamily: "poppins, sans-serif",
+      h5: {
+        color: '#a594f9',
+        fontWeight: 200,
       },
-      h2: {
-        color: purple[200],
-        fontWeight: 600,
-      },
-      h3: {
-        color: purple[300],
+      h6: {
+        fontFamily: '',
+        color: '#a594f9',
         fontWeight: 500,
       },
     },
@@ -49,11 +47,11 @@ const App = () => {
       fontFamily: "Quicksand, sans-serif",
       h5: {
         color: '#3f3250',
-        fontWeight: 500,
+        fontWeight: 900,
       },
       h6: {
         color: '#ffffff',
-        fontWeight: 500,
+        fontWeight: 900,
       },
     },
   });
