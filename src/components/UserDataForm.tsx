@@ -19,19 +19,19 @@ const UserDataForm = () => {
     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
       if (!isFormDirty) return;
       event.preventDefault();
-      event.returnValue = ""; // Stop browser default alert
+      event.returnValue = "";
       Swal.fire({
         title: "Unsaved Changes!",
         text: "You have unsaved changes. Are you sure you want to leave?",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonText: "Leave Page",
+        confirmButtonText: "Wanna Leave",
         cancelButtonText: "Stay",
         confirmButtonColor: "#d32f2f",
         cancelButtonColor: "#6a1b9a",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigator.sendBeacon("/log-exit", "User left without saving"); // Prevent browser alert
+          navigator.sendBeacon("/log-exit", "User left without saving");
           window.removeEventListener("beforeunload", handleBeforeUnload);
           window.location.reload();
         }
@@ -43,8 +43,18 @@ const UserDataForm = () => {
   }, [isFormDirty]);
 
   const handleSubmit = () => {
+    if (!formData.name || !formData.address || !formData.email || !formData.phone) {
+      Swal.fire({
+        title: "Error!",
+        text: "All fields are required.",
+        icon: "error",
+        confirmButtonColor: "#d32f2f",
+      });
+      return;
+    }
+
     dispatch(setUser(formData));
-    localStorage.setItem("user", JSON.stringify(formData));
+    // localStorage.setItem("user", JSON.stringify(formData));
     setIsFormDirty(false);
 
     Swal.fire({
@@ -61,7 +71,8 @@ const UserDataForm = () => {
         <TextField
           label="Name"
           fullWidth
-          variant="outlined"
+          variant="standard"
+          required
           onChange={(e) => {
             setFormData({ ...formData, name: e.target.value });
             setIsFormDirty(true);
@@ -70,7 +81,8 @@ const UserDataForm = () => {
         <TextField
           label="Address"
           fullWidth
-          variant="outlined"
+          variant="standard"
+          required
           onChange={(e) => {
             setFormData({ ...formData, address: e.target.value });
             setIsFormDirty(true);
@@ -79,8 +91,9 @@ const UserDataForm = () => {
         <TextField
           label="Email"
           fullWidth
-          variant="outlined"
+          variant="standard"
           type="email"
+          required
           onChange={(e) => {
             setFormData({ ...formData, email: e.target.value });
             setIsFormDirty(true);
@@ -89,8 +102,9 @@ const UserDataForm = () => {
         <TextField
           label="Phone"
           fullWidth
-          variant="outlined"
+          variant="standard"
           type="tel"
+          required
           onChange={(e) => {
             setFormData({ ...formData, phone: e.target.value });
             setIsFormDirty(true);
