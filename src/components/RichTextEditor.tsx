@@ -1,10 +1,29 @@
 import { Box } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
 const RichTextEditor: React.FC = () => {
   const [editorValue, setEditorValue] = useState<string>('');
+  const user = useSelector((state: RootState) => state.user);
+
+  useEffect(() => {
+    if (user && user.name) {
+      setEditorValue(`
+         ${user.id}
+         <br/>
+         ${user.name}
+         <br/>
+         ${user.address}
+         <br/>
+         ${user.email}
+         <br/>
+        ${user.phone}
+      `);
+    }
+  }, [user]);
 
   const handleChange = (value: string) => {
     setEditorValue(value);
