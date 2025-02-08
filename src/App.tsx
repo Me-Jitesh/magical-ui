@@ -9,16 +9,15 @@ const App = () => {
   const darkTheme = createTheme({
     palette: {
       mode: 'dark',
-      primary: { main: '#a594f9' },
-      secondary: { main: '#8d99ae' },
-      info: { main: '#4cdef5' },
+      primary: { main: '#A084E8' },
+      secondary: { main: '#1E1E2E' },
       background: {
         default: '#0e0b16',
         paper: '#0d0c1d',
       },
     },
     typography: {
-      fontFamily: "poppins, sans-serif",
+      fontFamily: "Josefin Sans, sans-serif",
       h5: {
         color: '#a594f9',
         fontWeight: 200,
@@ -34,9 +33,9 @@ const App = () => {
   const lightTheme = createTheme({
     palette: {
       mode: 'light',
-      primary: { main: '#8d99ae' },
-      secondary: { main: '#fee715' },
-      info: { main: '#4cdef5' },
+      primary: { main: '#D5D1D6' },
+      secondary: { main: '#2A1E37' },
+      warning: { main: '#2A1E37' },
 
       background: {
         default: '#3f3250',

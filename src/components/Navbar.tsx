@@ -21,6 +21,10 @@ const Navbar: React.FC<{ toggleTheme: () => void; darkMode: boolean }> = ({
           Magical UI ✨
         </Typography>
 
+        <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}>
+          <IPGeoLocation />
+        </Box>
+
         <IconButton
           edge="start"
           color="inherit"
@@ -30,11 +34,6 @@ const Navbar: React.FC<{ toggleTheme: () => void; darkMode: boolean }> = ({
         >
           <MenuIcon />
         </IconButton>
-
-        <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}>
-          <IPGeoLocation />
-        </Box>
-
 
         <Box sx={{ display: "flex", alignItems: "center", padding: 2 }}>
           <IconButton onClick={toggleTheme} color="secondary">
