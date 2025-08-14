@@ -1,4 +1,4 @@
-> # Magical UI Project For Upliance.ai
+> # Magical UI
 
  ### Hosting :: https://magical-web.vercel.app/
 
